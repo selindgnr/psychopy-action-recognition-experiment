@@ -1,73 +1,62 @@
 # PsychoPy Action Recognition Experiment
 
-Bu depo, PsychoPy ile hazirlanmis bir insan eylemi tanima deneyini icerir. Deneyde katilimcilar kisa video klipler izler ve gorulen eylemi `1-5` tuslariyla siniflandirir.
+This repository contains a PsychoPy-based human action recognition experiment. Participants watch short video clips and classify the observed action using number keys `1-5`.
 
-Onerilen GitHub depo adi: `psychopy-action-recognition-experiment`
+Suggested repository name: `psychopy-action-recognition-experiment`
 
-## Deney Ozeti
+## Experiment Overview
 
 - Platform: PsychoPy Builder / PsychoPy Python export
-- Ana gorev: Video tabanli action recognition
-- Siniflar: `JumpingJack`, `Lunges`, `PullUps`, `PushUps`, `Swing`
-- Akis: yonerge -> egitim fazi -> test fazi -> performans ozeti
+- Task: Video-based action recognition
+- Action classes: `JumpingJack`, `Lunges`, `PullUps`, `PushUps`, `Swing`
+- Flow: instructions -> training phase -> test phase -> performance summary
 
-## Ana Dosyalar
+## Main Files
 
-- `experimentpsychopy.psyexp`: Ana PsychoPy Builder dosyasi
-- `experimentPrerana.py`: Builder'dan export edilmis ana deney scripti
-- `ucf5_training_conditions.csv`: Egitim fazi kosul dosyasi
-- `sorted_test_list.csv`: Test fazi icin siralanmis ornek liste
-- `videos.xlsx`: Video envanteri
+- `experimentpsychopy.psyexp`: main PsychoPy Builder file
+- `experimentPrerana.py`: exported PsychoPy experiment script
+- `ucf5_training_conditions.csv`: training-phase condition file
+- `sorted_test_list.csv`: ordered test-phase stimulus list
+- `videos.xlsx`: video inventory
 
-## Yardimci Scriptler
+## Helper Scripts
 
-- `master_test_list.py`: Klasorlerden video envanteri uretir ve `videos.xlsx` yazar
-- `final_test_list_ordered.py`: Dengeli test listesi uretir ve `sorted_test_list.csv` olusturur
-- `concise_csv_extractor.py`: Genis PsychoPy cikti dosyalarini daha kisa analiz formatina cevirir
+- `master_test_list.py`: builds a video inventory from the stimulus folders and writes `videos.xlsx`
+- `final_test_list_ordered.py`: creates a balanced test list and writes `sorted_test_list.csv`
+- `concise_csv_extractor.py`: converts large PsychoPy output files into a shorter analysis-friendly format
 
-## Klasor Yapisi
+## Folder Structure
 
-- `training/`: Egitim videolari
-- `ucf5/`: Ana test video havuzu
-- `extra/`: Alternatif / ek uyaran setleri ve ilgili condition dosyalari
-- `pilot/`: Pilot surum ve pilot ciktilari
-- `data/`: Calistirma sonrasi olusan deney ciktilari
+- `training/`: training videos
+- `ucf5/`: main test video pool
 
-## GitHub Icin Notlar
+## GitHub Notes
 
-Bu depo `.gitignore` ile buyuk video dosyalarini ve uretilen cikti dosyalarini disarida birakacak sekilde ayarlandi. Boylece GitHub'a daha temiz ve yonetilebilir bir proje gider.
+This repository is configured with `.gitignore` to keep large stimulus videos and generated runtime outputs out of version control. That keeps the GitHub repository smaller and easier to manage.
 
-Git'te tutulmasi onerilenler:
+Recommended to keep in Git:
 
 - `*.psyexp`
-- ana Python scriptleri
-- condition CSV dosyalari
-- analiz / yardimci scriptler
-- bu README
+- main Python scripts
+- condition CSV files
+- analysis / helper scripts
+- this README
 
-Git disinda tutulmasi onerilenler:
+Recommended to keep out of Git:
 
-- ham video uyaranlari
-- `data/` altindaki katilimci ciktilari
-- `*_lastrun.py` gibi otomatik uretilen dosyalar
-- gecici / yedek calisma klasorleri
+- raw stimulus videos
+- participant output files
+- auto-generated files such as `*_lastrun.py`
+- temporary or backup working folders
 
-Uyaran videolarini da GitHub'da saklamak istiyorsan en iyi secenek normal Git yerine Git LFS kullanmak olur.
+If you want to store stimulus videos on GitHub as well, Git LFS is a better option than regular Git.
 
-## Calistirma
+## Running the Experiment
 
-1. PsychoPy'yi kur.
-2. Gerekli uyaran videolarinin `training/`, `ucf5/` ve gerekiyorsa `extra/` altinda mevcut oldugundan emin ol.
-3. `experimentpsychopy.psyexp` dosyasini Builder ile veya `experimentPrerana.py` dosyasini Python ile calistir.
+1. Install PsychoPy.
+2. Make sure the required stimulus videos are present under `training/` and `ucf5/`.
+3. Run `experimentpsychopy.psyexp` in PsychoPy Builder, or run `experimentPrerana.py` with Python.
 
-## Sonraki Adimlar
+## Status
 
-GitHub'a yuklemeden once sunlari yapmani oneririm:
-
-1. `git status` ile hangi dosyalarin eklenecegini kontrol et.
-2. Gerekirse depo adini `psychopy-action-recognition-experiment` olarak sec.
-3. Ilk commit'i olustur.
-4. GitHub'da bos repo acip remote ekle.
-5. `git push -u origin main` ile gonder.
-
-Istersen bir sonraki adimda birlikte ilk commit'i hazirlayip GitHub remote'unu da ekleyebiliriz.
+The repository has been cleaned for GitHub upload and now keeps the core experiment files, condition files, and helper scripts while excluding large generated or backup content.
