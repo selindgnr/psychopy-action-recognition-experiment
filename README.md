@@ -13,8 +13,8 @@ Suggested repository name: `psychopy-action-recognition-experiment`
 
 ## Main Files
 
-- `experimentpsychopy.psyexp`: main PsychoPy Builder file
-- `experimentPrerana.py`: exported PsychoPy experiment script
+- `action_recognition_experiment.psyexp`: main PsychoPy Builder file
+- `action_recognition_experiment.py`: exported PsychoPy experiment script
 - `ucf5_training_conditions.csv`: training-phase condition file
 - `sorted_test_list.csv`: ordered test-phase stimulus list
 - `videos.xlsx`: video inventory
@@ -55,7 +55,7 @@ If you want to store stimulus videos on GitHub as well, Git LFS is a better opti
 
 1. Install PsychoPy.
 2. Make sure the required stimulus videos are present under `training/` and `ucf5/`.
-3. Run `experimentpsychopy.psyexp` in PsychoPy Builder, or run `experimentPrerana.py` with Python.
+3. Run `action_recognition_experiment.psyexp` in PsychoPy Builder, or run `action_recognition_experiment.py` with Python.
 
 ## Status
 

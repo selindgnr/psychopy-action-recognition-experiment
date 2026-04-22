@@ -12,7 +12,7 @@ pilot/data/
 *.psydat
 
 # Local backups / working snapshots
-experimentPrerana_working_final_check/
+*_working_final_check/
 
 # Large stimulus media
 *.avi

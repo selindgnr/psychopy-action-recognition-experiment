@@ -5,7 +5,7 @@ Each block contains exactly 3 videos from each of 5 labels (5×3=15), sampled wi
 and shuffled inside each block to avoid label clustering.
 
 Input file:
-  C:/Users/PC/Desktop/experimentPrerana/videos.xlsx
+  ./videos.xlsx
   Expected columns (current file):
     - class_label  (will be renamed to label)
     - video_path   (will be renamed to video_file)
@@ -13,7 +13,7 @@ Input file:
     - any other columns (ignored)
 
 Output file (ONLY these columns, in this order):
-  C:/Users/PC/Desktop/experimentPrerana/sorted_test_list.csv
+  ./sorted_test_list.csv
   Columns: video_file,label,correct_ans
 """
 
@@ -26,16 +26,16 @@ import pandas as pd
 # ========= INPUT / OUTPUT PATHS =========
 # Portable path handling:
 # - Optional CLI args: python script.py <input_excel> [output_csv]
-# - Otherwise, try (in order): script folder ./videos.xlsx, user's Desktop/experimentPrerana/videos.xlsx,
-#   then the original absolute path.
+# - Otherwise, try (in order): script folder ./videos.xlsx, current working directory ./videos.xlsx,
+#   then a common Desktop fallback.
 _input_arg = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else None
 _output_arg = Path(sys.argv[2]).expanduser() if len(sys.argv) > 2 else None
 
 _SCRIPT_DIR = Path(__file__).resolve().parent
 _DEFAULT_CANDIDATES = [
     _SCRIPT_DIR / "videos.xlsx",
-    Path.home() / "Desktop" / "experimentPrerana" / "videos.xlsx",
-    Path(r"C:/Users/PC/Desktop/experimentPrerana/videos.xlsx"),
+    Path.cwd() / "videos.xlsx",
+    Path.home() / "Desktop" / "videos.xlsx",
 ]
 
 if _input_arg is not None:
