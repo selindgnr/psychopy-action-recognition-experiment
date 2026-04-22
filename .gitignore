@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PsychoPy generated outputs
+data/
+pilot/data/
+*_lastrun.py
+*.log
+*.psydat
+
+# Local backups / working snapshots
+experimentPrerana_working_final_check/
+
+# Large stimulus media
+*.avi
+*.mp4
+*.mov
+*.mkv
+*.wmv
+*.m4v
+*.webm
+*.mpg
+*.mpeg
+
+# OS / editor files
+.DS_Store
+Thumbs.db
